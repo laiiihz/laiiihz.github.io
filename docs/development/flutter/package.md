@@ -26,6 +26,9 @@
 
 ## 第三方SDK
 
+* [微信sdk](https://pub.dev/packages/fluwx)
+* [tobiassdk](https://pub.dev/packages/tobias)
+
 ### 地图导航
 
 * 高德地图
@@ -44,10 +47,8 @@
   * [firebase_crashlytics](https://pub.dev/packages/firebase_crashlytics)
 * [sentry](https://pub.dev/packages/sentry)
 
-* [微信sdk](https://pub.dev/packages/fluwx)
-* [tobiassdk](https://pub.dev/packages/tobias)
 
 ## 工具类
 
-*[flustars]()
-*[quiver]()
+*[flustars](https://pub.dev/packages/flustars)
+*[quiver](https://pub.dev/packages/quiver)
