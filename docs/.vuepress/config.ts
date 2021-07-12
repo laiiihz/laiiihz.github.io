@@ -17,23 +17,37 @@ export default defineUserConfig<DefaultThemeOptions>({
             '/': {
                 navbar: [
                     {
-                        text: 'home',
+                        text: 'Home',
                         link: '/',
                     },
                     {
-                        text: 'development',
+                        text: 'Development',
                         link: '/development/dev.md',
+                        activeMatch:'^/development/',
                     },
                     {
-                        text: 'github',
+                        text: 'Links',
+                        link: '/links',
+                    },
+                    {
+                        text: 'Github',
                         link: 'https://github.com/laiiihz',
                     },
                 ],
                 sidebar: {
-                    '/development':[
+                    '/development': [
                         {
-                            text:'dev',
-                            link:'/development/dev.md',
+                            text: 'dev',
+                            link: '/development/dev.md',
+                        },
+                        {
+                            text: 'Flutter',
+                            children: [
+                                {
+                                    text: 'package',
+                                    link: '/development/flutter/package.md',
+                                }
+                            ],
                         }
                     ],
                 },
