@@ -23,7 +23,7 @@ export default defineUserConfig<DefaultThemeOptions>({
                     {
                         text: 'DEVELOPMENT',
                         link: '/development/dev.md',
-                        activeMatch:'^/development/',
+                        activeMatch: '^/development/',
                     },
                     {
                         text: 'LINKS',
@@ -58,5 +58,17 @@ export default defineUserConfig<DefaultThemeOptions>({
             },
         },
     },
+    plugins: [
+        [
+            '@vuepress/plugin-search',
+            {
+                locales: {
+                    '/': {
+                        placeholder: '搜索',
+                    },
+                },
+            },
+        ],
+    ],
 
 })
