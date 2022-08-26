@@ -1,8 +1,9 @@
 import { defineUserConfig } from '@vuepress/cli'
-import type { DefaultThemeOptions } from '@vuepress/theme-default'
-import { path } from '@vuepress/utils'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { defaultTheme } from '@vuepress/theme-default'
 
-export default defineUserConfig<DefaultThemeOptions>({
+
+export default defineUserConfig({
     base: '/',
     locales: {
         '/': {
@@ -11,64 +12,80 @@ export default defineUserConfig<DefaultThemeOptions>({
             description: 'laiiihz blog',
         },
     },
-    themeConfig: {
+    theme: defaultTheme({
         docsDir: 'docs',
         locales: {
             '/': {
                 navbar: [
                     {
-                        text: 'HOME',
+                        text: '首页',
                         link: '/',
                     },
                     {
-                        text: 'DEVELOPMENT',
+                        text: '博客',
+                        link: '/blogs/readme.md',
+                        activeMatch: '^/blogs/',
+                    },
+                    {
+                        text: '开发',
                         link: '/development/dev.md',
                         activeMatch: '^/development/',
                     },
                     {
-                        text: 'LINKS',
+                        text: '链接',
                         link: '/links',
                     },
                     {
-                        text: 'GITHUB',
+                        text: 'Github',
                         link: 'https://github.com/laiiihz',
                     },
                 ],
                 sidebar: {
                     '/development': [
                         {
-                            text: 'DEV',
+                            text: '开发',
                             link: '/development/dev.md',
                         },
                         {
-                            text: 'FLUTTER',
+                            text: 'Flutter',
                             children: [
                                 {
-                                    text: 'PACKAGE',
+                                    text: 'packages',
                                     link: '/development/flutter/package.md',
                                 },
                                 {
-                                    text: 'MY PACKAGE',
+                                    text: '我的packages',
                                     link: '/development/flutter/my_package.md',
                                 }
                             ],
                         }
                     ],
+                    '/blogs': [
+                        {
+                            text: '2022-08',
+                            children: [
+                                {
+                                    text: '在Dart中实现TextMate语法',
+                                    link: '/blogs/2022-08/text_mate_in_dart.md'
+                                },
+                                {
+                                    text: 'Readme',
+                                    link: '/blogs/2022-08/readme.md'
+                                }
+                            ]
+                        },
+                    ],
                 },
-            },
+            }
         },
-    },
+    }),
     plugins: [
-        [
-            '@vuepress/plugin-search',
-            {
-                locales: {
-                    '/': {
-                        placeholder: '搜索',
-                    },
-                },
-            },
-        ],
+        searchPlugin({
+            locales: {
+                '/': {
+                    placeholder: "搜索"
+                }
+            }
+        })
     ],
-
 })
