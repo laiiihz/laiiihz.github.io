@@ -62,16 +62,12 @@ export default defineUserConfig({
                     ],
                     '/blogs': [
                         {
-                            text: '2022-08',
+                            text: '2023-03',
                             children: [
                                 {
-                                    text: '在Dart中实现TextMate语法',
-                                    link: '/blogs/2022-08/text_mate_in_dart.md'
+                                    text: '用Riverpod实现的无限滚动列表',
+                                    link: '/blogs/2023-03/infinity-list-riverpod.md'
                                 },
-                                {
-                                    text: 'Readme',
-                                    link: '/blogs/2022-08/readme.md'
-                                }
                             ]
                         },
                     ],
