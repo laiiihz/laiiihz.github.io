@@ -1,0 +1,7 @@
+.DS_Store
+.vite_opt_cache
+dist
+cache
+temp
+node_modules
+pnpm-global
